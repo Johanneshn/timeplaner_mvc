@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Meeting Agenda Builder</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Bootstrap -->
+		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		
+		<!-- JQuery UI -->
+		<link type="text/css" href="lib/jQueryUI/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+		
+		<!--[if IE 7]>
+		<link type="text/css" href="lib/jQueryUI/jquery.ui.1.10.0.ie.css" rel="stylesheet" />
+		<![endif]-->
+		
+		<!-- Custom Stylesheet -->
+		<link href="style.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-timepicker.min.css">
+		
+		
+		<!-- Processing.js -->
+		<script src="lib/processing-1.4.1.min.js"></script>
+		
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+
+		<!-- Model -->
+		<script src="model/meeting_model.js"></script>
+		
+		<!-- General Controller -->
+		<script src="general_controller.js"></script>
+		
+		<!-- Views and controllers -->
+
+		<script src="view/summaryBox.js"></script>
+		<script src="view/mainView.js"></script>
+		<script src="view/mainViewController.js"></script>
+
+		
+	</head>
+	<body>				
+		<div id="main-container">
+			<div class="container-fluid full-height">
+				<div class="row-fluid full-height" id="main-view">
+					
+					<!-- View for activity pool -->
+					<div class="span3" id="activity-stack-container">
+						
+						<!-- Add activity button -->
+						<div class="row-fluid text-center" id="add-activity-button-container">
+							<button class="btn btn-primary span12" id="add-activity-button">
+								<i class="icon-plus"></i>
+								<strong>Add Activity</strong>
+							</button>
+						</div>
+						
+						<!-- Activity Stack -->
+						<div class="row-fluid activity-stack full-height" id="parked-activities" >
+							
+							<!-- Activities -->
+						</div> <!-- End of Activity Stack -->
+					</div> <!-- End of Activity Pool -->
+					
+					<!-- Days Container -->
+					<div class="span9" id="fluid-content">					
+						<div class="row-fluid full-height">
+							
+							<!-- List of Days -->
+							<div id="days-container">
+															
+							</div> <!-- End of days container -->
+							
+							<div class="full-size" style="display: inline-block">
+								<button class="btn btn-primary" id="add-day-button">
+									<i class="icon-plus"></i>
+									<strong>Add a day</strong>
+								</button>
+							</div>
+							
+						</div> <!-- End of fluid content row -->
+					</div> <!-- End of fluid content -->
+					
+				</div> <!-- End of main-view row -->
+			</div> <!-- End of the container -->
+		</div> <!-- End of main container -->	
+			
+		<!-- Activity modal-->
+		<div id="activity-modal" class="modal hide fade">
+			<div class="modal-header">
+				<button type="button"  class="close" id="modal-close-button" data-dismiss="modal" aria-hidden="true">X</button>
+				<h3 id="modal-header">Add activity</h3>
+			</div>
+  
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="control-group">
+						<div class="controls">
+							<input type="text" id="activity-name" placeholder="Activity name">
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="controls">
+							<input type="text" id="activity-length" class="input-small" placeholder="Length"> min
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="controls">
+							<select id="activity-type">
+								<option>Presentation</option>
+								<option>Discussion</option>
+								<option>Group Work</option>
+								<option>Break</option>
+							</select>
+						</div>
+					</div>
+					
+					<div class="control-group">
+						<div class="controls">
+							<textarea rows="4" id="activity-description" placeholder="Activity description" ></textarea>
+						</div>
+					</div>
+				</form>
+			</div>
+		
+			<div class="modal-footer">
+				<button class="btn btn-danger" id="modal-cancel-button" data-dismiss="modal" aria-hidden="true">Cancel</button>
+				<button class="btn btn-success" id="modal-save-button">Save</button>
+				<button class="btn btn-success" id="modal-edit-button">Edit</button>
+			</div>
+		</div> <!-- End of activity modal -->
+		
+		
+		<script src="lib/jquery-1.9.1.min.js"></script>
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="lib/jQueryUI/jquery-ui-1.10.1.custom.min.js"></script>
+		<script src="lib/bootstrap/js/bootstrap-timepicker.min.js"></script>
+		
+		<script>
+			$( document ).ready( function( e )
+			{
+			
+				var model = new Model();
+				generalController = new GeneralController(model);				
+			} );
+		</script>
+		
+		
+	</body>
+</html>
