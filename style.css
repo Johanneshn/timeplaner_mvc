@@ -1,0 +1,110 @@
+/* Layout */
+#main-container
+{
+	width: 100%;
+	height: 98%;
+	position: absolute;
+	left: 0px;
+	top: 10px;
+}
+
+#activity-stack-container
+{
+	height: 90%;
+}
+
+.full-height
+{
+	height: 100%;
+}
+
+
+
+/* Activity Stack */
+.activity-stack
+{
+	border: 1px dashed #000;
+}
+
+
+
+/* Activities */
+.activity
+{
+	margin: 0px;
+}
+
+.activity .title
+{
+	border: 1px solid #5D96FF;
+	padding-top: 4px;
+	padding-left: 4px;
+}
+
+.activity .time
+{
+	padding-top: 4px;
+	padding-left: 4px;
+}
+
+.presentation .title
+{
+	background-color: #C5D3EC;
+}
+
+.group-work .title
+{
+	background-color: #EF989D;
+}
+
+.discussion .title
+{
+	background-color: #88EA7F;
+}
+
+.break .title
+{
+	background-color: #EFFA6C;
+}
+
+
+
+/* Days */
+#fluid-content
+{
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	height: 100%;
+}
+
+#days-container
+{
+	display: inline-block;
+	height: 100%;
+	vertical-align: top;
+}
+
+.day
+{
+	width: 260px;
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: top;
+}
+
+#add-day-button
+{
+	display: inline-block;
+	width: 150px;
+	height: 80px;
+	margin-top: 200px;
+}
+
+
+
+/* Styling */
+#add-activity-button-container
+{
+	margin-bottom: 10px;
+}
